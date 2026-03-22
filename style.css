@@ -1,0 +1,157 @@
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+   width: 5px;
+}
+
+::-webkit-scrollbar-track {
+   background: #f0f2f8;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #c0cef5;
+   border-radius: 3px;
+}
+
+/* nav underline animation */
+.nl {
+   position: relative;
+}
+
+.nl::after {
+   content: '';
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   right: 0;
+   height: 2px;
+   background: #1a4fd8;
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform .25s;
+}
+
+.nl:hover::after {
+   transform: scaleX(1);
+}
+
+/* dropdown */
+.has-drop:hover>.dp {
+   display: block;
+}
+
+.dp {
+   display: none;
+}
+
+.has-sub:hover>.sp {
+   display: block;
+}
+
+.sp {
+   display: none;
+}
+
+/* mobile menu + accordion */
+#mm {
+   display: none;
+}
+
+#mm.open {
+   display: block;
+}
+
+.acc-body {
+   display: none;
+}
+
+.acc-body.open {
+   display: block;
+}
+
+.acc-btn svg {
+   transition: transform .25s;
+}
+
+.acc-btn.open svg {
+   transform: rotate(180deg);
+}
+
+/* hero grid pattern */
+#hero {
+   background: linear-gradient(115deg, #0b1f3d 0%, #102a52 55%, #183663 100%);
+   position: relative;
+   overflow: hidden;
+}
+
+#hero::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* marquee */
+.mq-wrap {
+   overflow: hidden;
+}
+
+.mq-track {
+   display: flex;
+   width: max-content;
+   animation: mq 24s linear infinite;
+}
+
+@keyframes mq {
+   0% {
+      transform: translateX(0)
+   }
+
+   100% {
+      transform: translateX(-50%)
+   }
+}
+
+/* scroll reveal */
+.rv {
+   opacity: 0;
+   transform: translateY(18px);
+   transition: opacity .55s, transform .55s;
+}
+
+.rv.in {
+   opacity: 1;
+   transform: none;
+}
+
+
+.card-bar {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 2px;
+   background: linear-gradient(90deg, #1a4fd8, #5b8ef0);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform .35s ease;
+}
+
+.svc-card:hover .card-bar {
+   transform: scaleX(1);
+}
+
+
+/* FAQ Css  */
+
+.faq-body {
+   display: none;
+}
+
+.faq-body.open {
+   display: block;
+}
