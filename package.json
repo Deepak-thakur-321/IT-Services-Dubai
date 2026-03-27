@@ -1,0 +1,24 @@
+{
+  "name": "it-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepak-thakur-321/IT-Services-Dubai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepak-thakur-321/IT-Services-Dubai/issues"
+  },
+  "homepage": "https://github.com/Deepak-thakur-321/IT-Services-Dubai#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "tailwindcss": "^4.2.2"
+  }
+}
