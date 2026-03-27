@@ -1,0 +1,700 @@
+/* =========================
+   GLOBAL CSS (ALL PAGES)
+========================= */
+
+* {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+   width: 5px;
+}
+
+::-webkit-scrollbar-track {
+   background: #f0f2f8;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #c0cef5;
+   border-radius: 3px;
+}
+
+/* Nav underline */
+.nl {
+   position: relative;
+}
+
+.nl::after {
+   content: '';
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   right: 0;
+   height: 2px;
+   background: #1a4fd8;
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform .25s;
+}
+
+.nl:hover::after {
+   transform: scaleX(1);
+}
+
+/* Dropdown */
+.dp {
+   display: none;
+}
+
+.has-drop:hover>.dp {
+   display: block;
+}
+
+/* Mobile Menu */
+#mm {
+   display: none;
+}
+
+#mm.open {
+   display: block;
+}
+
+/* Scroll Reveal */
+.rv {
+   opacity: 0;
+   transform: translateY(18px);
+   transition: opacity .55s, transform .55s;
+}
+
+.rv.in {
+   opacity: 1;
+   transform: none;
+}
+
+/* Card Hover Effect */
+.card-bar {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 2px;
+   background: linear-gradient(90deg, #1a4fd8, #5b8ef0);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform .3s;
+}
+
+.svc-card:hover .card-bar {
+   transform: scaleX(1);
+}
+
+
+/* =========================
+   HOME PAGE CSS
+========================= */
+
+/* Sub dropdown */
+.has-sub:hover>.sp {
+   display: block;
+}
+
+.sp {
+   display: none;
+}
+
+/* Accordion */
+.acc-body {
+   display: none;
+}
+
+.acc-body.open {
+   display: flex;
+   flex-direction: column;
+}
+
+/* Arrow rotate on open */
+.acc-btn.open svg {
+   transform: rotate(180deg);
+   transition: transform 0.2s ease;
+}
+
+.acc-btn svg {
+   transition: transform 0.2s ease;
+}
+
+/* Hero Section */
+#hero {
+   background: #050c2c;
+   position: relative;
+   overflow: hidden;
+}
+
+#hero::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background-image: url("data:image/svg+xml,...");
+}
+
+/* Marquee */
+.mq-wrap {
+   overflow: hidden;
+}
+
+.mq-track {
+   display: flex;
+   width: max-content;
+   animation: mq 24s linear infinite;
+}
+
+@keyframes mq {
+   0% {
+      transform: translateX(0);
+   }
+
+   100% {
+      transform: translateX(-50%);
+   }
+}
+
+
+/* =========================
+   IT AMC PAGE CSS
+========================= */
+
+/* Page Hero */
+.page-hero {
+   background: linear-gradient(115deg, #0b1f3d 0%, #102a52 55%, #183663 100%);
+   position: relative;
+   overflow: hidden;
+}
+
+.page-hero::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background-image: url("data:image/svg+xml,...");
+}
+
+/* FAQ */
+.faq-body {
+   display: none;
+}
+
+.faq-body.open {
+   display: block;
+}
+
+.faq-btn svg.arr {
+   color: #ffffff;
+   stroke: #ffffff;
+   transition: transform .25s;
+}
+
+.faq-btn.open svg.arr {
+   transform: rotate(180deg);
+}
+
+
+/* =========================
+   IT SUPPORT PAGE CSS
+========================= */
+
+/* Hero Background */
+.hero-bg {
+   background: #050c2c;
+}
+
+/* Dot Grid Background */
+.dot-grid {
+   background-image: radial-gradient(rgba(110, 170, 255, .12) 1px, transparent 1px);
+   background-size: 28px 28px;
+}
+
+/* FAQ (Support Page - already global but safe override) */
+.faq-body {
+   display: none;
+}
+
+/* Arrow rotate */
+.arr {
+   transition: transform .25s ease;
+}
+
+.faq-btn.open .arr {
+   transform: rotate(180deg);
+}
+
+/* Fade Up Animation */
+@keyframes fu {
+   from {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+.fu {
+   animation: fu .6s ease both;
+}
+
+.fu2 {
+   animation: fu .6s .1s ease both;
+}
+
+.fu3 {
+   animation: fu .6s .2s ease both;
+}
+
+.fu4 {
+   animation: fu .6s .3s ease both;
+}
+
+/* Service Card Hover (Support Page version enhanced) */
+.svc-card {
+   position: relative;
+   overflow: hidden;
+   transition: all .25s ease;
+}
+
+.svc-card::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   height: 3px;
+   background: linear-gradient(90deg, #1a4fd8, #6eaaff);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform .3s ease;
+}
+
+.svc-card:hover::after {
+   transform: scaleX(1);
+}
+
+.svc-card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 16px 40px rgba(26, 79, 216, .1);
+}
+
+/* Pill Tabs */
+.ptab {
+   cursor: pointer;
+   transition: all .2s;
+}
+
+.ptab.active,
+.ptab:hover {
+   background: #1a4fd8;
+   color: #fff;
+   border-color: #1a4fd8;
+}
+
+/* Tab Panels */
+.tpanel {
+   display: none;
+}
+
+.tpanel.active {
+   display: block;
+}
+
+/* Comparison Check Icon */
+.chk {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+}
+
+
+/* =========================
+   ABOUT PAGE CSS
+========================= */
+
+/* Hero Background (About Page Specific Override) */
+.about-hero {
+   background: #050c2c;
+}
+
+/* Dot Grid Background (About Page Slight Variant) */
+.about-dot-grid {
+   background-image: #010136;
+   background-size: 12px 12px;
+}
+
+/* Diagonal Stripe Accent */
+.stripe-accent {
+   background-image: repeating-linear-gradient(-45deg,
+         rgba(26, 79, 216, .04) 0px,
+         rgba(26, 79, 216, .04) 1px,
+         transparent 1px,
+         transparent 12px);
+}
+
+/* Value Cards */
+.val-card {
+   transition: all .25s ease;
+}
+
+.val-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 20px 50px rgba(26, 79, 216, .12);
+}
+
+/* Timeline Line */
+.tl-line {
+   position: absolute;
+   left: 19px;
+   top: 44px;
+   bottom: -24px;
+   width: 2px;
+   background: linear-gradient(to bottom,
+         #1a4fd8 0%,
+         rgba(26, 79, 216, .1) 100%);
+}
+
+/* Counter Numbers */
+.counter {
+   font-variant-numeric: tabular-nums;
+}
+
+/* Service Pills */
+.svc-pill {
+   transition: all .2s ease;
+}
+
+.svc-pill:hover {
+   background: #1a4fd8;
+   color: #fff;
+   border-color: #1a4fd8;
+}
+
+/* Team Cards */
+.team-card {
+   transition: all .25s ease;
+}
+
+.team-card:hover {
+   transform: translateY(-4px);
+   box-shadow: 0 16px 40px rgba(0, 0, 0, .1);
+}
+
+
+/* =========================
+   OFFICE IT SERVICES PAGE CSS
+========================= */
+
+/* Hero Section */
+.office-hero {
+   background: #050c2c;
+   position: relative;
+   overflow: hidden;
+}
+
+.office-hero::before {
+   content: '';
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background-image:
+      radial-gradient(circle at 20% 50%, rgba(26, 79, 216, 0.18) 0%, transparent 55%),
+      radial-gradient(circle at 80% 20%, rgba(110, 170, 255, 0.1) 0%, transparent 45%);
+}
+
+/* Grid Background */
+.grid-lines {
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background-image:
+      linear-gradient(rgba(26, 79, 216, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 79, 216, 0.06) 1px, transparent 1px);
+   background-size: 60px 60px;
+}
+
+/* Floating Stats Cards */
+.stat-float {
+   background: rgba(255, 255, 255, 0.06);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   backdrop-filter: blur(12px);
+   border-radius: 16px;
+}
+
+/* Timeline */
+.timeline-item::before {
+   content: '';
+   position: absolute;
+   left: 27px;
+   top: 56px;
+   width: 2px;
+   height: calc(100% + 16px);
+   background: linear-gradient(to bottom, #1a4fd8, transparent);
+}
+
+.timeline-item:last-child::before {
+   display: none;
+}
+
+/* Setup / Service Cards */
+.setup-card {
+   position: relative;
+   background: #fff;
+   border: 1px solid #e5e7eb;
+   border-radius: 16px;
+   padding: 28px;
+   transition: all 0.25s ease;
+   overflow: hidden;
+   /* border-color: #b3c9ff; */
+
+}
+
+.setup-card::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 3px;
+   background: linear-gradient(90deg, #1a4fd8, #6eaaff);
+   transform: scaleX(0);
+   transform-origin: left;
+   transition: transform 0.3s ease;
+}
+
+.setup-card:hover {
+   border-color: #b3c9ff;
+   transform: translateY(-4px);
+   box-shadow: 0 16px 40px rgba(26, 79, 216, 0.12);
+}
+
+.setup-card:hover::after {
+   transform: scaleX(1);
+}
+
+/* Checklist */
+.check-row {
+   display: flex;
+   align-items: flex-start;
+   gap: 12px;
+   padding: 14px 16px;
+   background: #f8faff;
+   border: 1px solid #e8eeff;
+   border-radius: 10px;
+   transition: all 0.2s;
+}
+
+.check-row:hover {
+   background: #eef3ff;
+   border-color: #c0d3ff;
+}
+
+/* Industry Tabs */
+.ind-tab {
+   cursor: pointer;
+   border: 1px solid #e5e7eb;
+   border-radius: 10px;
+   padding: 14px 18px;
+   transition: all 0.2s;
+   background: #fff;
+}
+
+.ind-tab.active,
+.ind-tab:hover {
+   background: #1a4fd8;
+   border-color: #1a4fd8;
+   color: white;
+}
+
+.ind-panel {
+   display: none;
+}
+
+.ind-panel.active {
+   display: grid;
+}
+
+/* Comparison Table */
+.cmp-row:nth-child(even) {
+   background: #f8faff;
+}
+
+/* Icon Badge */
+.icon-badge {
+   width: 52px;
+   height: 52px;
+   border-radius: 14px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 22px;
+   flex-shrink: 0;
+}
+
+/* Step Number Background */
+.step-num {
+   font-size: 72px;
+   font-weight: 800;
+   line-height: 1;
+   color: rgba(26, 79, 216, 0.06);
+   position: absolute;
+   top: -12px;
+   right: 16px;
+   font-family: Arial, sans-serif;
+}
+
+/* Highlight Section */
+.highlight-band {
+   background: linear-gradient(135deg, #1a4fd8 0%, #0f3ab5 100%);
+   position: relative;
+   overflow: hidden;
+}
+
+.highlight-band::before {
+   content: '';
+   position: absolute;
+   right: -100px;
+   top: -100px;
+   width: 400px;
+   height: 400px;
+   border-radius: 50%;
+   background: radial-gradient(circle, rgba(110, 170, 255, 0.2) 0%, transparent 65%);
+   pointer-events: none;
+}
+
+/* Tech Logos */
+.tech-logo {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 12px 20px;
+   background: #fff;
+   border: 1px solid #e8eeff;
+   border-radius: 10px;
+   font-size: 12px;
+   font-weight: 700;
+   color: #4b6a9b;
+   letter-spacing: 0.05em;
+}
+
+.rv {
+   opacity: 1;
+   transform: none;
+}
+
+
+
+/* =========================
+   CONTACT PAGE CSS
+========================= */
+
+/* -------------------------
+   Form Input States
+------------------------- */
+.field:focus {
+   outline: none;
+   border-color: #1a4fd8;
+   box-shadow: 0 0 0 3px rgba(26, 79, 216, .12);
+}
+
+.field.error {
+   border-color: #ef4444;
+   box-shadow: 0 0 0 3px rgba(239, 68, 68, .1);
+}
+
+.field.success {
+   border-color: #22c55e;
+   box-shadow: 0 0 0 3px rgba(34, 197, 94, .1);
+}
+
+
+/* -------------------------
+   Google Map (Responsive)
+------------------------- */
+.map-wrap {
+   position: relative;
+   padding-bottom: 60%;
+   /* aspect ratio */
+   height: 0;
+   overflow: hidden;
+   border-radius: 16px;
+}
+
+.map-wrap iframe {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   border: 0;
+}
+
+
+/* -------------------------
+   Contact Cards Hover (Optional Enhancement)
+------------------------- */
+.contact-card {
+   transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+
+/* =========================
+   IT SECURITY PAGE CSS
+========================= */
+
+/* Hero Override (Only if different from global) */
+.hero-bg-security {
+   background: rgb(1, 1, 73);
+}
+
+/* Tabs */
+.ptab {
+   cursor: pointer;
+   transition: all .2s;
+}
+
+.ptab.active,
+.ptab:hover {
+   background: #1a4fd8;
+   color: #fff;
+   border-color: #1a4fd8;
+}
+
+/* Tab Panels */
+.tpanel {
+   display: none;
+}
+
+.tpanel.active {
+   display: block;
+}
+
+/* Comparison Check */
+.chk {
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/* bg color blue #010136 */
